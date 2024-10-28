@@ -8,7 +8,7 @@ access_tokens="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" # @param {type:"string"}
 model = StableDiffusionPipeline.from_pretrained("CompVis/stable-diffusion-v1-4", use_auth_token=access_tokens)
 model.to("cuda")
 
-prompt = "slightly underbaked bread" #@param {type:"string"}
+prompt = "burnt bread" #@param {type:"string"}
 
 # 画像出力のディレクトリ
 import os
@@ -23,7 +23,7 @@ num = 4
  
 for i in range(num):
   # モデルにプロンプトを入力して画像生成
-  image = model(prompt, num_inference_steps=75).images[0]
+  image = model(prompt, num_inference_steps=35).images[0]
 
   # 保存
   outputfile = f'{filename} _{i:02} .png'
