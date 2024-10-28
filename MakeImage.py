@@ -22,7 +22,7 @@ filename = re.sub(r'[\\/:*?"<>|,]+', '', prompt).replace(' ','_')
 num = 4
  
 for i in range(num):
-  # モデルにプロンプトを入力して画像生成
+  # モデルにプロンプトを入力して画像生成!
   image = model(prompt, num_inference_steps=75).images[0]
 
   # 保存
