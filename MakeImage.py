@@ -2,7 +2,8 @@ from diffusers import StableDiffusionPipeline
 import matplotlib.pyplot as plt
 
 # アクセストークンの設定
-access_tokens="***REMOVED_HF_TOKEN***" # @param {type:"string"}
+import os
+access_tokens=os.environ.get("HF_ACCESS_TOKEN", "") # @param {type:"string"}
  
 # モデルのインスタンス化
 model = StableDiffusionPipeline.from_pretrained("CompVis/stable-diffusion-v1-4", use_auth_token=access_tokens)
